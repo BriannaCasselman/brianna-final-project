@@ -32,14 +32,14 @@
         {% for member in data.members %}
           <li>{{ member.name }}, {{ member.instruments }}</li>
         {% else %}
-          <li>This would display if the 'books' collection were empty</li>
+          <li>This would display if the 'member' collection were empty</li>
         {% endfor %}
      </ul>
      <ul> 
         {% for discography in data.discography %}
           <li>{{ discography.title }}, {{ discography.year }}</li>
         {% else %}
-          <li>This would display if the 'books' collection were empty</li>
+          <li>This would display if the 'discography' collection were empty</li>
         {% endfor %}
      </ul>
     </div>
