@@ -1,5 +1,5 @@
 {% extends '_layouts/detail.njk' %}
-{% set members = data.members %}
+{% set members = data.members[2] %}
 
 {% block info %}
   <h1>{{ members.name }}</h1>
@@ -7,5 +7,5 @@
 
 {% block story %}
   <h2>Undead: Right column content</h2>
-  <p>Zombie ipsum brains reversus ab cerebellum viral inferno, thalamus nam rick mend grimes malum cerveau cerebro.</p>
+  <p>{{ members.text }}</p>
 {% endblock %}
