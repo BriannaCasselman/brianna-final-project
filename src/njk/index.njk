@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <h1>Queen: A History</h1>
+    <h1>Queen</h1>
     <p class="author">By {% for author in authors %}
       <a href="{{ author.link }}" target="_blank">{{ author.name }}</a>{% if not loop.last %}{% if loop.revindex0 == 1 %} and {% else %}, {% endif %}{% endif %} {% endfor %}
       <br> Published {{ publish_date }}
