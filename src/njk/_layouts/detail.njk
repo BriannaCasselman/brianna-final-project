@@ -1,9 +1,15 @@
 {% extends '_layouts/base.njk' %}
+{% set members = data.members %}
 
 {% block content %}
 <article class="container">
   <div class="row">
     <div class="col-sm-4 left-rail">
+    <h1>{{ members.name }}</h1>
+    <h5>Birthdate: {{ members.birthdate }}</h5>
+    <h5>Birthplace: {{ members.birthplace }}</h5>
+    <h5>Tenure: {{ members.tenure }}</h5>
+    <h5>{{ members.instruments }}</h5>
       {% block info %}{% endblock %}
     </div>
     <div class="col-sm-8">
