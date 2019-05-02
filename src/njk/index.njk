@@ -30,16 +30,17 @@
 <div class="card-deck">
   {% for member in data.members %}
   <div class="card">
-    <img class="card-img-top" class="img-fluid" src="img/member/{{ member.imagebw }}" alt="{{ member.slug }}">
+    <img class="card-img-top" class="img-fluid" src="img/members/{{ member.imagebw }}" alt="{{ member.slug }}">
     <div class="card-body">
-      <h5 class="card-title"> {{ member.name }}</h5>
-       <a href="#" class="btn btn-primary">Learn More</a>
+      <h4 class="card-title"> {{ member.name }}</h4>
+      <p>{{ member.instruments }}</p>
     </div>
   </div>
   {% else %}
   <li>Unable to load band members</li>
   {% endfor %}
-  
+</div>
+    <ul>
         {% for discography in data.discography %}
           <li>{{ discography.title }}, {{ discography.year }}</li>
         {% else %}
