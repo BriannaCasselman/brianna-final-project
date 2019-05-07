@@ -21,27 +21,38 @@
       <p>
         Estimates of Queen's record sales range from 170 million to 300 million records, making them one of the world's best-selling music artists. Queen received the Outstanding Contribution to British Music Award from the British Phonographic Industry in 1990. They were inducted into the Rock and Roll Hall of Fame in 2001. Each member has composed hit singles, and all four were inducted into the Songwriters Hall of Fame in 2003. In 2005, Queen received the Ivor Novello Award for Outstanding Song Collection from the British Academy of Songwriters, Composers, and Authors. In 2018, they were presented the Grammy Lifetime Achievement Award. (Via <a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a>)
       </p>
-<div class="card-deck">
-  {% for member in data.members %}
-  <div class="card">
-    <img class="card-img-top" class="img-fluid" src="img/members/{{ member.imagebw }}" alt="{{ member.slug }}">
-    <div class="card-body">
-      <h4 class="card-title"> {{ member.name }}</h4>
-      <p>{{ member.instruments }}</p>
     </div>
   </div>
-  {% else %}
-  <li>Unable to load band members</li>
-  {% endfor %}
-</div>
-    <ul>
-        {% for discography in data.discography %}
-          <li>{{ discography.title }}, {{ discography.year }}</li>
+  <div class=row>
+    <div class=col-sm-12 class=col-md-3 class=col-lg-3>
+      <div class="card-deck">
+        {% for member in data.members %}
+        <div class="card">
+          <img class="card-img-top" class="img-fluid" src="img/members/{{ member.imagebw }}" alt="{{ member.slug }}">
+          <div class="card-body">
+            <h4 class="card-title"> {{ member.name }}</h4>
+            <p>{{ member.instruments }}</p>
+          </div>
+        </div>
         {% else %}
-          <li>This would display if the 'discography' collection were empty</li>
+        <li>Unable to load band members</li>
         {% endfor %}
-     </ul>
+      </div>
     </div>
   </div>
+<div class=row>
+  <div class=col-sm-4>
+    <ul class="list-unstyled">
+      {% for discography in data.discography %}
+      <li class="media">
+      <img class="mr-3" src="img/discs/{{ discography.image }}" alt="{{ discography.title }}">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">{{ discography.title }}</h5>
+        {{ discography.year }}
+      </li>
+      </div>
+    </ul>
+  </div>
+</div>
 </div>
 {% endblock %}
