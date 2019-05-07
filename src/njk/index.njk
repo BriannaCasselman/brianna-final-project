@@ -43,14 +43,15 @@
 <div class=row>
   <div class=col-sm-4>
     <ul class="list-unstyled">
-      {% for discography in data.discography %}
+    {% for discography in data.discography %}
       <li class="media">
-      <img class="mr-3" src="img/discs/{{ discography.image }}" alt="{{ discography.title }}">
+      <img class="mr-3" class="img-fluid" src="img/discs/{{ discography.image }}" alt="{{ discography.title }}">
       <div class="media-body">
         <h5 class="mt-0 mb-1">{{ discography.title }}</h5>
         {{ discography.year }}
-      </li>
       </div>
+      </li>
+        {% endfor %}
     </ul>
   </div>
 </div>
